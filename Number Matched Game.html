@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Matched Game</title>
+</head>
+<style>
+    body{
+        background-color: khaki;
+    }
+    #result_won{
+        display: block;
+        text-align:center;
+        color:limegreen;
+        font-size:24px;
+        border: 1pc solid goldenrod;
+        text-transform: uppercase;
+        margin: 0px;
+        width:300px;
+        padding: 10px;
+        background: orangered;
+        
+
+    }
+    #result_lose{
+        display: block;
+        text-align:center;
+        color:red;
+        font-size:24px;
+        border: 1pc solid goldenrod;
+        text-transform: uppercase;
+        margin: 0px;
+        width:300px;
+        padding: 10px;
+        background:white;
+        
+
+    }
+    
+    #result_won:empty{
+        display:none;
+    }
+    #result_lose:empty{
+        display:none;
+    }
+    h1{
+        font-size:40px;
+        color:blue;
+        text-shadow: 5px 5px greenyellow;
+    }
+    span{
+        font-size:30px;
+        color:red;
+        transition: 1s;
+        font-style: italic;
+    }
+    span:hover{
+        background-color:black;
+    }
+</style>
+<body>
+    <p id="result_won"></p>
+    <p id="result_lose"></p>
+    <h1 ></h1>
+    <h1></h1>
+   <span>
+    &copy;JohnyMondol
+   </span> 
+    <script>
+        var won=0;
+        var lost=0;
+        for(var i=1; i<6; i++){
+            var guessNumber=parseInt(prompt("Enter a number from 1 to 5"));
+        var randomNumber=Math.floor(Math.random()*4)+1;
+        if(guessNumber==randomNumber){
+            console.log("Ranmom Number Has Matched You Have Won");
+            won++;
+            document.getElementById("result_won").innerHTML="You Have won <img align='center' width='300px' src='https://s3.amazonaws.com/zweb-s3.uploads/ez2/wp-content/uploads/2019/04/Joe-Biden-560x444.jpg'  />";
+
+
+        }
+        else{
+            console.log("You Have Lost Random Number Was "+randomNumber +" But You Gave "+ guessNumber);
+            lost++;
+            document.getElementById("result_lose").innerHTML="You Have Lost <img align='center' width='300px' src='https://imgk.timesnownews.com/story/donald_trump_ap_images_1.jpg?tr=w-600,h-450,fo-auto' />";
+      
+        }
+
+        } 
+        document.getElementsByTagName("h1")[0].innerHTML="Total Number Of Won "+ won+"<br>";
+        document.getElementsByTagName("h1")[1].innerHTML="Total Number Of Lost "+ lost;
+    
+        
+        //document.write("<h1>"+"Totoal Number Of Lost "+lost+"</h1>");
+    </script>
+    
+</body>
+</html>
